@@ -396,7 +396,7 @@ namespace Lab56
                 {
                     if(punctuation == sentenceArray[sentenceArray.Length - 1][sentenceArray[sentenceArray.Length - 1].Length - 1])
                     {
-                        sentenceArray[sentenceArray.Length - 1] = sentenceArray[sentenceArray.Length - 1].Substring(0, sentenceArray.Length - 2);
+                        sentenceArray[sentenceArray.Length - 1] = sentenceArray[sentenceArray.Length - 1].Substring(0, sentenceArray[sentenceArray.Length - 1].Length - 1);
                     }
                 }
                 foreach (string word in sentenceArray)
