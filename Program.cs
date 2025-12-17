@@ -375,7 +375,7 @@ namespace Lab56
                 sentence = sentence.Trim();
                 char sign = sentence[sentence.Length - 1];
                 sentence = sentence.Remove(sentence.Length - 1);
-                string[] sentenceArray = sentence.Split(' ');
+                string[] sentenceArray = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
                 for (int i = 0; i < sentenceArray.Length; i++)
                 {
                     char[] chars = sentenceArray[i].ToCharArray();
