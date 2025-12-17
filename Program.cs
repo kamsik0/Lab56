@@ -292,7 +292,7 @@ namespace Lab56
         }
         static string ReadString()
         {
-            string[] badCombo = { ",,", "!!", "..", "??", ";;", "::" };
+            char[] punctuations = { ',', ';', ':', '.', '!', '?' };
             bool isSuccessful = false;
             string givenString;
             do
@@ -306,13 +306,17 @@ namespace Lab56
                     isSuccessful = false;
                     continue;
                 }
-                foreach (string badString in badCombo)
+                foreach (char sign in punctuations)
                 {
-                    if (givenString.IndexOf(badString) != -1)
+                    foreach (char sign2 in punctuations)
                     {
-                        Console.WriteLine($"Ошибка! В строке не должно быть комбинаций '{badString}'");
-                        isSuccessful = false;
-                        break;
+                        string badCombo = ""+sign + sign2;
+                        if (givenString.IndexOf(badCombo) != -1)
+                        {
+                            Console.WriteLine($"Ошибка! В строке не должно быть комбинаций '{badCombo}'");
+                            isSuccessful = false;
+                            break;
+                        }
                     }
                 }
             } while (!isSuccessful);
